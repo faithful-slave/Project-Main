@@ -9,6 +9,9 @@
 #define TEXT_C_WHITE 37
 
 
+// 式式式式式式式式式式式式式式式[made by 營唳]式式式式式式式式式式式式式式式 //
+
+
 void clearScreen() {
     printf("\x1b[2J");
 }
@@ -17,6 +20,9 @@ void gotoXY(int _x, int _y) {
 }
 void colorChange(int _colorNum) {
     printf("\x1b[%dm", _colorNum);
+}
+void colorEnd() {
+    printf("\x1b[0m");
 }
 int main() {
     char input;
