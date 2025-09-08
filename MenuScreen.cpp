@@ -6,7 +6,8 @@
 #include <windows.h>
 // ───────────────[made by 재경]─────────────── //
 // ui 제작
-void showMenuScreen() {
+void showMenuScreen() 
+{
     char input;
     {
         // MAIN MENU출력
@@ -37,7 +38,8 @@ void showMenuScreen() {
     int currentMenuIndex = 0;  // 현재 선택된 메뉴 인덱스
     int ch;
 
-    while (1) {
+    while (1) 
+    {
         gotoXY(26, 20);
         printf("좌우 방향키로 메뉴 선택 후 Enter 키를 눌러 원하는 게임을 선택하세요.\n\n");
 
