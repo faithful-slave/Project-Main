@@ -125,13 +125,19 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainScreen.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="MenuScreen.cpp" />
+    <ClCompile Include="Typing_Game.cpp" />
+    <ClCompile Include="Typing_Game_Screen.h" />
+    <ClCompile Include="Typing_Game_Sentence.cpp" />
     <ClCompile Include="Typing_Intro.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainScreen.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuScreen.h" />
+    <ClInclude Include="Typing_Game.h" />
     <ClInclude Include="Typing_Intro.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

@@ -12,4 +12,6 @@ void colorEnd();
 #define TEXT_C_RED 31
 #define TEXT_C_BLUE 34
 #define TEXT_C_WHITE 37
+#define TEXT_C_CHENG 36 //청록
+#define TEXT_C_WHITE 37 //하양
 #endif

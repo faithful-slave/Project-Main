@@ -78,8 +78,7 @@ void showMenuScreen()
         else if (ch == 13)  // Enter 키
         {  
             system("cls");
-            printf("[%s] 으로 이동 중입니다!\n", menus[currentMenuIndex]); //메뉴 currentMenuIndex번째로 이동
-            printf("%d", currentMenuIndex);
+            printf("[%s] 으로 이동 중입니다! 잠시만 기다려 주세요...\n", menus[currentMenuIndex]); //메뉴 currentMenuIndex번째로 이동
             break;  // 선택 완료 후 종료
         }
     }

@@ -62,7 +62,7 @@ void showMainScreen() {
     printf("게임을 시작하는 중입니다");
     colorEnd();
 
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 1; i++)
     {
         gotoXY(45, 23);
         printf("  잠시만 기다려주세요");

@@ -30,6 +30,18 @@
     <ClCompile Include="Typing_Intro.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Typing_Game.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Typing_Game_Sentence.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Typing_Game_Screen.h">
+      <Filter>헤더 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainScreen.h">
@@ -42,6 +54,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Typing_Intro.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Typing_Game.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
