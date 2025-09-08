@@ -62,7 +62,7 @@ void showMainScreen() {
     printf("게임을 시작하는 중입니다");
     colorEnd();
 
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 2; i++)
     {
         gotoXY(45, 23);
         printf("  잠시만 기다려주세요");
@@ -78,7 +78,5 @@ void showMainScreen() {
     }
 
     gotoXY(36, 11);
-
-    Sleep(1000);//3초 멈춤
     system("cls");
 }
