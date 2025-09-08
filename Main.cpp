@@ -1,10 +1,12 @@
 #include "MainScreen.h"
 #include "MenuScreen.h"
 
-int main() {
-    showMainScreen();     // 시작 애니메이션
-    showMenuScreen();     // 메뉴 화면 출력
-    //if문 써서 1번 메뉴면 무슨게임 출력
-    //2번 메뉴면 무슨게임 출력 정하기
+int main() 
+{
+
+    //출력순서
+    showMainScreen();     // 1. 인트로 화면 출력
+    showMenuScreen();     // 2. 메뉴 화면 & 게임 선택 화면 출력
+
     return 0;
 }
