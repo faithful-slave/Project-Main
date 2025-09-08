@@ -126,11 +126,13 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainScreen.cpp" />
     <ClCompile Include="MenuScreen.cpp" />
+    <ClCompile Include="Typing_Intro.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainScreen.h" />
     <ClInclude Include="MenuScreen.h" />
+    <ClInclude Include="Typing_Intro.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -6,6 +6,7 @@
 #include <windows.h>
 // ───────────────[made by 재경]─────────────── //
 // ui 제작
+int menunum = 0;
 void showMenuScreen() 
 {
     char input;
@@ -26,13 +27,12 @@ void showMenuScreen()
 // ───────────────[made by 수범]─────────────── //
 // 키보드로 좌우 방향키를 입력받아 메뉴 선택 기능
 
-#define MAX_MENUS 3 //최대 메뉴 갯수 지정
+#define MAX_MENUS 2 //최대 메뉴 갯수 지정
 
     char menus[MAX_MENUS][30] = //메뉴 배열 지정
     {
         "반응 속도 테스트 게임",
         "타자 게임",
-        "테트리스"
     };
 
     int currentMenuIndex = 0;  // 현재 선택된 메뉴 인덱스
@@ -43,7 +43,7 @@ void showMenuScreen()
         gotoXY(26, 20);
         printf("좌우 방향키로 메뉴 선택 후 Enter 키를 눌러 원하는 게임을 선택하세요.\n\n");
 
-        gotoXY(30, 22);  // 메뉴 갯수 및 글자 갯수에 따른 x위치 조정 바람
+        gotoXY(39, 22);  // 메뉴 갯수 및 글자 갯수에 따른 x위치 조정 바람
 
         // 메뉴 종류를 한 줄로 표시 (선택된 메뉴는 대괄호로 감싸 표시)
         for (int i = 0; i < MAX_MENUS; i++)
@@ -79,8 +79,11 @@ void showMenuScreen()
         {  
             system("cls");
             printf("[%s] 으로 이동 중입니다!\n", menus[currentMenuIndex]); //메뉴 currentMenuIndex번째로 이동
+            printf("%d", currentMenuIndex);
             break;  // 선택 완료 후 종료
         }
     }
+    menunum = currentMenuIndex;
+    Sleep(900);
 }
 
