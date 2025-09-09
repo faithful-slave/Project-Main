@@ -67,13 +67,13 @@ void showMainScreen() {
         gotoXY(45, 23);
         printf("  잠시만 기다려주세요");
         printf("\x1b[2K\r");    gotoXY(45, 23);
-        printf("  잠시만 기다려주세요.");
+        printf("  잠시만 기다려주세요");
         Sleep(1000);//1초 멈춤
         printf("\x1b[2K\r");    gotoXY(45, 23);
-        printf("  잠시만 기다려주세요..");
+        printf("  잠시만 기다려주세요");
         Sleep(1000);//1초 멈춤
         printf("\x1b[2K\r");    gotoXY(45, 23);
-        printf("  잠시만 기다려주세요...");
+        printf("  잠시만 기다려주세요");
         Sleep(1000);//1초 멈춤
     }
 

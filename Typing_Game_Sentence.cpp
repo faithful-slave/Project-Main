@@ -3,29 +3,61 @@
 #include <string.h>
 #include <windows.h>
 #include <time.h>
-
+#include "Utils.h"
 #include "Typing_Game.h"
-
 
 void startCountdown() //Ω√¿€ æ»≥ª ∏ﬁΩ√¡ˆ «‘ºˆ
 {
-	printf("¡ÿ∫Òµ«ºÃ≥™ø‰?\n");
-	Sleep(1000);
-
-	printf("3√  »ƒ Ω√¿€«’¥œ¥Ÿ\n");
-	Sleep(2000);
-
+#define x 50
+#define y 10
+	gotoXY(x, y + 0); printf(" $$$$$$\\  ");
+	gotoXY(x, y + 1); printf("$$ ___$$\\ ");
+	gotoXY(x, y + 2); printf("\\_/   $$ |");
+	gotoXY(x, y + 3); printf("  $$$$$ / ");
+	gotoXY(x, y + 4); printf("  \\___$$\\ ");
+	gotoXY(x, y + 5); printf("$$\\   $$ |");
+	gotoXY(x, y + 6); printf("\\$$$$$$  |");
+	gotoXY(x, y + 7); printf(" \\______/ ");
+	
+	Sleep(1000);//3√  ∏ÿ√„
 	system("cls");
-
-	for (int i = 3; i >= 1; i--)
-	{
-		printf("%d\n", i);
-		Sleep(1000);
-	}
-
-	printf("Ω√¿€!\n");
-	Sleep(1000);
+	
+	gotoXY(x, y + 0); printf(" $$$$$$\\  ");
+	gotoXY(x, y + 1); printf("$$  __$$\\ ");
+	gotoXY(x, y + 2); printf("\\__/  $$ |");
+	gotoXY(x, y + 3); printf(" $$$$$$  |");
+	gotoXY(x, y + 4); printf("$$  ____/ ");
+	gotoXY(x, y + 5); printf("$$ |      ");
+	gotoXY(x, y + 6); printf("$$$$$$$$\\ ");
+	gotoXY(x, y + 7); printf("\\________|");
+	
+	Sleep(1000);//3√  ∏ÿ√„
 	system("cls");
+	
+	gotoXY(x, y + 0); printf(" /$$\\      ");
+	gotoXY(x, y + 1); printf("/$$$ |   ");
+	gotoXY(x, y + 2); printf("\\_$$ |   ");
+	gotoXY(x, y + 3); printf("  $$ |   ");
+	gotoXY(x, y + 4); printf("  $$ |   ");
+	gotoXY(x, y + 5); printf("  $$ |   ");
+	gotoXY(x, y + 6); printf("$$$$$$\\  ");
+	gotoXY(x, y + 7); printf("\\______| ");
+	
+	Sleep(1000);//3√  ∏ÿ√„
+	system("cls");
+	
+#define x 35
+	gotoXY(x, 10); printf("  /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$$  /$$$$$$$$");
+	gotoXY(x, 11); printf(" /$$__  $$|__  $$__//$$__  $$| $$__  $$|__  $$__/");
+	gotoXY(x, 12); printf("| $$  \\__/   | $$  | $$  \\ $$| $$  \\ $$   | $$   ");
+	gotoXY(x, 13); printf("|  $$$$$$    | $$  | $$$$$$$$| $$$$$$$/   | $$   ");
+	gotoXY(x, 14); printf(" \\____  $$   | $$  | $$__  $$| $$__  $$   | $$   ");
+	gotoXY(x, 15); printf(" /$$  \\ $$   | $$  | $$  | $$| $$  \\ $$   | $$   ");
+	gotoXY(x, 16); printf("|  $$$$$$/   | $$  | $$  | $$| $$  | $$   | $$   ");
+	gotoXY(x, 17); printf(" \\______/    |__/  |__/  |__/|__/  |__/   |__/   ");
+	
+	system("cls");
+	Sleep(100);
 }
 
 char dif[4][10] = { "easy", "normal", "hard" , "crazy" };

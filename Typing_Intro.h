@@ -3,5 +3,5 @@
 #define TYPING_INTRO_H
 
 void showTypingIntro();
-
+extern int returnnum;
 #endif

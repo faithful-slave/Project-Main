@@ -133,6 +133,8 @@ void showTypingGame()
 			printf(" - \x1b[38;2;180;190;255m타수\x1b[0m : \x1b[38;2;176;184;255m%.2f타\x1b[0m\n", wpm);
 
 			total_minus_count = total_minus_count + minus_count; //총 오타 갯수 합계
+			
+			// 루프 반복 시 안전한 초기화를 위한 변수 리셋 (필수는 아님)
 			minus_count = reset; //오타 갯수 변수 리셋
 			Score = reset; //얻는 점수 변수 리셋
 			elapsed_ms = 0; //시간 변수 리셋
@@ -188,6 +190,8 @@ void showTypingGame()
 			printf(" - \x1b[38;2;120;200;255m타수\x1b[0m : \x1b[38;2;160;220;255m%.2f타\x1b[0m\n", wpm);  //타수 출력
 
 			total_minus_count = total_minus_count + minus_count; //총 오타 갯수 합계
+
+			// 루프 반복 시 안전한 초기화를 위한 변수 리셋 (필수는 아님)
 			minus_count = reset; //오타 갯수 변수 리셋
 			Score = reset; //얻는 점수 변수 리셋
 			elapsed_ms = 0; //시간 변수 리셋
@@ -243,6 +247,8 @@ void showTypingGame()
 			printf(" - \x1b[38;2;120;200;255m타수\x1b[0m : \x1b[38;2;160;220;255m%.2f타\x1b[0m\n", wpm);  //타수 출력
 
 			total_minus_count = total_minus_count + minus_count; //총 오타 갯수 합계
+
+			// 루프 반복 시 안전한 초기화를 위한 변수 리셋 (필수는 아님)
 			minus_count = reset; //오타 갯수 변수 리셋
 			Score = reset; //얻는 점수 변수 리셋
 			elapsed_ms = 0; //시간 변수 리셋
@@ -298,6 +304,8 @@ void showTypingGame()
 			printf(" - \x1b[38;2;120;200;255m타수\x1b[0m : \x1b[38;2;160;220;255m%.2f타\x1b[0m\n", wpm);  //타수 출력
 
 			total_minus_count = total_minus_count + minus_count; //총 오타 갯수 합계
+
+			// 루프 반복 시 안전한 초기화를 위한 변수 리셋 (필수는 아님)
 			minus_count = reset; //오타 갯수 변수 리셋
 			Score = reset; //얻는 점수 변수 리셋
 			elapsed_ms = 0; //시간 변수 리셋
@@ -312,13 +320,14 @@ void showTypingGame()
 	double total_avg_wpm = 0;  //평균 타수 변수
 	total_avg_wpm = total_wpm / 10; //평균 타수 계산
 
-	printf("\x1b[1;33m당신의 난이도는 \x1b[1;35m%s\x1b[1;33m입니다.\x1b[0m\n", dif[difnum]);
-	printf("\x1b[1;33m당신의 평균 타이핑 속도는 \x1b[1;35m%.2f초\x1b[1;33m입니다.\x1b[0m\n", total_avg_time);
-	printf("\x1b[1;33m당신의 총 점수는 \x1b[1;35m%d점\x1b[1;33m입니다.\x1b[0m\n", total_score);
-	printf("\x1b[1;33m당신의 평균 타수는 \x1b[1;35m%.2f타\x1b[1;33m입니다.\x1b[0m\n", total_avg_wpm);
+	printf("\x1b[38;5;230m당신의 난이도는 \x1b[38;5;219m%s\x1b[38;5;230m입니다.\x1b[0m\n", dif[difnum]);
+	printf("\x1b[38;5;230m당신의 평균 타이핑 속도는 \x1b[38;5;219m%.2f초\x1b[38;5;230m입니다.\x1b[0m\n", total_avg_time);
+	printf("\x1b[38;5;230m당신의 총 점수는 \x1b[38;5;219m%d점\x1b[38;5;230m입니다.\x1b[0m\n", total_score);
+	printf("\x1b[38;5;230m당신의 평균 타수는 \x1b[38;5;219m%.2f타\x1b[38;5;230m입니다.\x1b[0m\n", total_avg_wpm);
+	printf("\x1b[38;5;230m당신의 총 오타 갯수는 \x1b[38;5;219m%d개\x1b[38;5;230m입니다.\x1b[0m\n", total_minus_count);
 	//해야할 것 총 점수 난이도에 따라 어떻게 계산할지 
 	//등급도 하고 싶고 별 다섯개도 하고 싶고
 	//100점으로 끝내야 되는데 오버하고
-	printf("\x1b[1;33m당신의 총 오타 갯수는 \x1b[1;35m%d개\x1b[1;33m입니다.\x1b[0m\n", total_minus_count);
+
 
 }
