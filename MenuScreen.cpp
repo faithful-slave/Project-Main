@@ -27,11 +27,8 @@ void showMenuScreen()
 // ───────────────[made by 수범]─────────────── //
 // 키보드로 좌우 방향키를 입력받아 메뉴 선택 기능
     const char* mainMenu[] = { "반응 속도 테스트 게임", "타자 게임"};
-    int selected = menu(mainMenu, 2, 26,20, 39, 22);
-    
-    printf("[%s] 으로 이동 중입니다! 잠시만 기다려 주세요...\n", mainMenu[selected]);
+    int selected = menu(mainMenu, 2, 38,20, 39, 22);
     menunum = selected;
-    Sleep(900);
     system("cls");
     
 }

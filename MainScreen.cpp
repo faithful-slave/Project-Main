@@ -7,28 +7,27 @@
 #include <windows.h>
 
 
-
 // ───────────────[made by 재경]─────────────── /
 void showMainScreen() {
     char input;
     {
         // TEAM 3 출력
         clearScreen();
-        gotoXY(32, 13);
-        printf("/$$$$$$$$                                       /$$$$$$");
         gotoXY(32, 14);
-        printf("|__  $$__/                                      /$$__  $$");
+        printf("/$$$$$$$$                                       /$$$$$$");
         gotoXY(32, 15);
-        printf("   | $$   /$$$$$$   /$$$$$$  /$$$$$$/$$$$       |__/  \\ $$");
+        printf("|__  $$__/                                      /$$__  $$");
         gotoXY(32, 16);
-        printf("   | $$  /$$__  $$ |____  $$| $$_  $$_  $$         /$$$$$/");
+        printf("   | $$   /$$$$$$   /$$$$$$  /$$$$$$/$$$$       |__/  \\ $$");
         gotoXY(32, 17);
-        printf("   | $$ | $$$$$$$$  /$$$$$$$| $$ \\ $$ \\ $$        |___  $$");
+        printf("   | $$  /$$__  $$ |____  $$| $$_  $$_  $$         /$$$$$/");
         gotoXY(32, 18);
-        printf("   | $$ | $$_____/ /$$__  $$| $$ | $$ | $$       /$$  \\ $$");
+        printf("   | $$ | $$$$$$$$  /$$$$$$$| $$ \\ $$ \\ $$        |___  $$");
         gotoXY(32, 19);
-        printf("   | $$ |  $$$$$$$|  $$$$$$$| $$ | $$ | $$      |  $$$$$$/");
+        printf("   | $$ | $$_____/ /$$__  $$| $$ | $$ | $$       /$$  \\ $$");
         gotoXY(32, 20);
+        printf("   | $$ |  $$$$$$$|  $$$$$$$| $$ | $$ | $$      |  $$$$$$/");
+        gotoXY(32, 21);
         printf("   |__/  \\_______/ \\_______/|__/ |__/ |__/       \\______/");
         // GAME START 출력
         gotoXY(12, 5);
@@ -58,25 +57,26 @@ void showMainScreen() {
     }
     colorChange(TEXT_C_WHITE);
 
-    gotoXY(45, 22);
-    printf("게임을 시작하는 중입니다");
+    gotoXY(45, 23);
+    printf("  게임을 시작하는 중입니다");
     colorEnd();
 
-    for (int i = 0; i < 1; i++)
+    Sleep(1000);
+    int total = 100;
+    srand(time(NULL));
+    int last = rand() % 20;
+    for (int i = 0; i <= total; i++) 
     {
-        gotoXY(45, 23);
-        printf("  잠시만 기다려주세요");
-        printf("\x1b[2K\r");    gotoXY(45, 23);
-        printf("  잠시만 기다려주세요");
-        Sleep(1000);//1초 멈춤
-        printf("\x1b[2K\r");    gotoXY(45, 23);
-        printf("  잠시만 기다려주세요");
-        Sleep(1000);//1초 멈춤
-        printf("\x1b[2K\r");    gotoXY(45, 23);
-        printf("  잠시만 기다려주세요");
-        Sleep(1000);//1초 멈춤
+        DoProgress("진행도 : ", i,  total, 18, 25);
+        Sleep(last); 
     }
+    Sleep(500);
+    gotoXY(18, 25); printf("\r\33[2K");
+    gotoXY(45, 23); printf("\r\33[2K");
 
-    gotoXY(36, 11);
+    gotoXY(55, 23);
+    printf(" 시작!");
+    Sleep(700);
+    
     system("cls");
 }

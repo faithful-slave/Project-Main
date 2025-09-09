@@ -8,7 +8,7 @@
 #include <conio.h>
 #include <windows.h>
 
-#define x 10
+#define x 5
 #define y 8
 #define p 24
 int returnnum = 0;
@@ -30,45 +30,54 @@ void showTypingIntro()
 
 
         const char* Typing_Menu[] = { "게임 시작하기", "게임 설명", "게임 선택으로 돌아가기" };
-        int selected = menu(Typing_Menu, 3, 40, 20, 50, 22);
+        int selected = menu(Typing_Menu, 3, 35, 20, 30, 22);
         //gotoXY(40, 20);//gotoXY(50, 22);
         if (selected == 0)
         {
             printf("\n");
             gotoXY(47, 5);
             printf("[ 게임을 시작하는 중 입니다 ]");
-            Sleep(3000);
+            Sleep(500);
             printf("\n");
         }
             
         else if (selected == 1)
         {
-            printf("게임 설명");
+            #define p 13
+            #define y 5
+            gotoXY(p, y + 0); printf("==========================================게임설명=============================================\n");
+            gotoXY(p, y + 1); printf("|                                                                                             |\n");
+            gotoXY(p, y + 2); printf("|                              난이도(Easy ~ Crazy)를 선택하고                                |\n");
+            gotoXY(p, y + 3); printf("|                            화면에 출력된 문장을 그대로 입력합니다.                          |\n");
+            gotoXY(p, y + 4); printf("|                                                                                             |\n");
+            gotoXY(p, y + 5); printf("|             10번 입력이 끝나면 오타, 점수, 걸린 시간, 타자 속도가 자동으로 표시되며         |\n");
+            gotoXY(p, y + 6); printf("|                            틀린 글자는 시각적으로 확인할 수 있습니다.                       |\n");
+            gotoXY(p, y + 7); printf("|                                                                                             |\n");
+            gotoXY(p, y + 8); printf("|                           정확도와 속도를 기반으로 점수가 계산되며                          |\n");
+            gotoXY(p, y + 9); printf("|                     반복 플레이를 통해 타자 실력을 향상시킬 수 있습니다.                    |\n");
+            gotoXY(p, y + 10); printf("|                                                                                             |\n");
+            gotoXY(p, y + 11); printf("===============================================================================================\n");
             const char* Typing_Menu[] = { "게임 시작하기", "게임 선택으로 돌아가기" };
-            int selected2 = menu(Typing_Menu, 2, 40, 20, 50, 22);
+            int selected2 = menu(Typing_Menu, 2, 38, 20, 38, 22);
             if (selected2 == 0)
             {
                 printf("\n");
                 gotoXY(47, 5);
-                printf("[ 게임을 시작하는 중 입니다 ]");
+                printf("[ 게임을 시작하는 중입니다 ]");
                 returnnum = 2;
-                Sleep(2000);
+                Sleep(500);
                 printf("\n");
             }
             else if (selected2 == 1)
 			{
                 printf("게임 선택 화면으로 돌아갑니다\n");
-                Sleep(2000);
                 returnnum = 1;
 			}
-            Sleep(3000);
         }
         else if (selected == 2)
         {
             printf("게임 선택 화면으로 돌아갑니다\n");
-            Sleep(2000);
             returnnum = 1;
-
         }
 
 

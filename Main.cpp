@@ -2,6 +2,7 @@
 #include "MenuScreen.h"
 #include "Typing_Intro.h"
 #include "Typing_Game_Screen.h"
+#include "Reaction_Test_Game.h"
 #include <Windows.h>
 
 int main()
@@ -15,7 +16,7 @@ int main()
         if (menunum == 0)
         {
             system("cls");
-            // 예: 종료 선택 시 루프 탈출
+            showReactionGame();
             break;
         }
 
