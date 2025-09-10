@@ -111,13 +111,13 @@ void showReactionGame()
             printf("   시도 %d: %llums\n", i + 1, times[i]);
     }
     ULONGLONG avg = total_time / TRIALS;
-    printf("\n     평균 반응 속도: \x1b[1;32m%llums\x1b[0m\n", avg);
+    printf("\n    평균 반응 속도: \x1b[1;32m%llums\x1b[0m\n", avg);
 
     printf("\n=====================================\n     ");
     print_grade(avg);
     // ────────────────────────────────────────────────────────── //
     const char* Reaction_Menu[] = { "게임 선택으로 돌아가기", "게임 끝내기"};
-    int selected = menu(Reaction_Menu, 2, 35, 25, 37, 27);
+    int selected = menu(Reaction_Menu, 2, 35, 15, 37, 17);
 
     if (selected == 0)
     {
