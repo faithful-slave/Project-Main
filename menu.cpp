@@ -35,7 +35,6 @@ int menu(const char* menus[], int menuCount, int textX, int textY, int menuX, in
         if (ch == 224)
         {
             ch = _getch();
-
             if (ch == 75) // 왼쪽 화살표 키
             {
                 currentMenuIndex--;

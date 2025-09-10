@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <windows.h>
 #include "Utils.h"
+#include <conio.h>
+
 #define ANSI_POS_OFFSET_X 1
 #define ANSI_POS_OFFSET_Y 1
 
@@ -62,4 +64,27 @@ void DoProgress(const char* label, int step, int total, int x, int y)
 
     // 현재 진행률(%)을/를 오른쪽에 출력
     printf(" %3d%% 완료됨", percent);
+}
+
+void Trycount(int textX, int textY)
+{
+    int ch;
+    while (1)
+    {
+        gotoXY(textX, textY);
+        printf("좌우 방향키로 메뉴 선택 후 Enter 키를 누르세요.\n\n");
+        if (ch == 224)
+        {
+            ch = _getch();
+            if (ch == 72) // 上 화살표 키
+            {
+
+            }
+            if (ch == 80) // 下 화살표 키
+            {
+
+            }
+        }
+    }
+
 }

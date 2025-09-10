@@ -33,6 +33,7 @@ void showReactionIntro()
     gotoXY(x, y + 15); printf("|  $$$$$$/| $$  | $$| $$ \\/  | $$| $$$$$$$$");
     gotoXY(x, y + 16); printf(" \\______/ |__/  |__/|__/     |__/|________/");
 
+
     const char* Reaction_Menu[] = { "게임 시작하기", "게임 선택으로 돌아가기" };
     int selected = menu(Reaction_Menu, 2, 35, 25, 37, 27);
 
