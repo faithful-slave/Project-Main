@@ -6,6 +6,7 @@
 #include "Reaction_Intro.h"
 #include <Windows.h>
 // ───────────────[made by 수범]─────────────── //
+
 int main()
 {
     //showReactionIntro();
@@ -39,8 +40,8 @@ int main()
         {
             system("cls");
             showTypingIntro(); // 타이핑 인트로 실행
-
-            if (Treturnnum == 1) //메뉴로
+            
+           if (Treturnnum == 1) //메뉴로
             {
                 system("cls");		
                 Treturnnum = 0;
@@ -53,7 +54,22 @@ int main()
                 Treturnnum = 0;
                 showTypingGame();  // 타이핑 게임 실행
 			}
+            
         }
+        if (Rreturnnum == 3)
+        {
+            system("cls");
+            Rreturnnum = 0;
+            showReactionIntro();  // 반응 게임 실행
+        }
+
+        if (Treturnnum == 3)
+        {
+            system("cls");
+            Treturnnum = 0;
+            showTypingIntro();  // 타이핑 게임 실행
+        }
+        
     }
 
     return 0;

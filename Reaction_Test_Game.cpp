@@ -116,14 +116,19 @@ void showReactionGame()
     printf("\n=====================================\n     ");
     print_grade(avg);
     // ────────────────────────────────────────────────────────── //
-    const char* Reaction_Menu[] = { "게임 선택으로 돌아가기", "게임 끝내기"};
-    int selected = menu(Reaction_Menu, 2, 35, 15, 37, 17);
+    const char* Reaction_Menu[] = { "다시플레이","게임 선택으로 돌아가기", "게임 끝내기"};
+    int selected = menu(Reaction_Menu, 3, 35, 15, 28, 17);
 
     if (selected == 0)
+	{
+        printf("게임을 다시 시작하는 중입니다\n");
+        Rreturnnum = 3;
+	}
+    if (selected == 1)
     {
         printf("게임 선택 화면으로 돌아갑니다\n");
     }
-    else if (selected == 1)
+    else if (selected == 2)
     {
         #define x 18
         #define y 7

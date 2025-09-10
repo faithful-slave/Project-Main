@@ -11,7 +11,6 @@
 #include "Typing_Game.h"  
 
 #define MENU_COUNT 5 // 메뉴 갯수
-
 // ───────────────[made by 수범]─────────────── //
 // 타이핑 게임 실행 함수
 void showTypingGame()  
@@ -91,7 +90,7 @@ void showTypingGame()
 			printf("[ 게임을 중지하고 게임 선택 화면으로 돌아갑니다 ]\n");
 			Sleep(700);
 			Treturnnum = 1;
-			break;
+			return;
 		}
 		else if (ch == 13) // ch에 입력 받은 키가 Enter키 이면
 		{ 
@@ -353,7 +352,7 @@ void showTypingGame()
 	total_avg_time = total_time / 10;   // 평균 타이핑 속도 계산
 	double total_avg_wpm = 0;           // 평균 타수 변수
 	total_avg_wpm = total_wpm / 10;     // 평균 타수 계산
-
+	
 	// ───────────────[made by 은혁]─────────────── //
 	printf("\x1b[38;5;230m당신의 난이도는 \x1b[38;5;219m%s\x1b[38;5;230m입니다.\x1b[0m\n", dif[difnum]);                   // 난이도 출력
 	printf("\x1b[38;5;230m당신의 평균 타이핑 속도는 \x1b[38;5;219m%.2f초\x1b[38;5;230m입니다.\x1b[0m\n", total_avg_time);  // 평균 타이핑 속도 출력
@@ -361,14 +360,19 @@ void showTypingGame()
 	printf("\x1b[38;5;230m당신의 평균 타수는 \x1b[38;5;219m%.2f타\x1b[38;5;230m입니다.\x1b[0m\n", total_avg_wpm);          // 평균 타수 출력
 	printf("\x1b[38;5;230m당신의 총 오타 갯수는 \x1b[38;5;219m%d개\x1b[38;5;230m입니다.\x1b[0m\n", total_minus_count);     // 총 오타갯수 출력
 	// ─────────────────────────────────────────── //
-	const char* Typing_Menu[] = { "게임 선택으로 돌아가기", "게임 끝내기" };
-	int selected1 = menu(Typing_Menu, 2, 35, 15, 37, 17);
-
+	
+	const char* Typing_Menu[] = { "다시플레이","게임 선택으로 돌아가기", "게임 끝내기" };
+	int selected1 = menu(Typing_Menu, 3, 35, 15, 28, 17);
 	if (selected1 == 0)
+	{
+		printf("게임을 다시 시작하는 중입니다\n");
+		Treturnnum = 3;
+	}
+	else if (selected1 == 1)
 	{
 		printf("게임 선택 화면으로 돌아갑니다\n");
 	}
-	else if (selected1 == 1)
+	else if (selected1 == 2)
 	{
 		#define x 18
 		#define y 7
