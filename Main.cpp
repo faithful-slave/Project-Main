@@ -40,20 +40,21 @@ int main()
             system("cls");
             showTypingIntro(); // 타이핑 인트로 실행
 
-            if (Treturnnum == 1)
+            if (Treturnnum == 1) //메뉴로
             {
                 system("cls");		
                 Treturnnum = 0;
                 continue;  // continue로 루프 재시작하여 다시 메인메뉴로 돌아감
                 
             }
-            if (Treturnnum == 2)
+            if (Treturnnum == 2) // 타이핑 게임 실행
 			{
 				system("cls");
                 Treturnnum = 0;
                 showTypingGame();  // 타이핑 게임 실행
+                break;
 			}
-            else
+            else  // 타이핑 게임 실행
             {
                 system("cls"); 
                 Treturnnum = 0;
