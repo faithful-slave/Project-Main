@@ -61,22 +61,23 @@ void showMainScreen() {
     printf("  게임을 시작하는 중입니다");
     colorEnd();
 
-    Sleep(1000);
-    int total = 100;
-    srand(time(NULL));
-    int last = rand() % 20;
-    for (int i = 0; i <= total; i++) 
+    // ───────────────[made by 수범]─────────────── //
+    Sleep(1000);                     // 1초 대기
+    int total = 100;                 // 진행바의 총 완료량 지정
+    srand(time(NULL));               // 현재 시간을 시드로 사용하여 난수 생성기를 초기화
+    int sleeptime = rand() % 20;     // 0~19사이의 난수를 생성
+    for (int i = 0; i <= total; i++) // 진행바의 총 완료량만큼 반복
     {
-        DoProgress("진행도 : ", i,  total, 18, 25);
-        Sleep(last); 
+        DoProgress("진행도 : ", i,  total, 18, 25); //// 진행바 이름, 완료량, 최종 완료량, 진행바의 위치, 지정하여 함수 실행
+        Sleep(sleeptime); // 랜덤 시간 만큼 대기
     }
-    Sleep(500);
-    gotoXY(18, 25); printf("\r\33[2K");
-    gotoXY(45, 23); printf("\r\33[2K");
+    Sleep(500); // 0.5초 대기
+    gotoXY(18, 25); printf("\r\33[2K"); // 줄 청소
+    gotoXY(45, 23); printf("\r\33[2K"); // 줄 청소
 
     gotoXY(55, 23);
     printf(" 시작!");
-    Sleep(700);
+    Sleep(700); // 0.7초 대기
     
-    system("cls");
+    system("cls"); // 콘솔 청소
 }

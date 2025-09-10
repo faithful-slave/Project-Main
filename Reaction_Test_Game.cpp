@@ -6,6 +6,7 @@
 #include "Reaction_Test_Game.h"
 
 #define TRIALS 5
+// ───────────────[made by 수범]─────────────── //
 //주석 달고 반응속도 테스트 메뉴 만들기
 void print_grade(ULONGLONG ms) {
     if (ms <= 180) {
@@ -93,6 +94,7 @@ void showReactionGame()
     }
 
     // 평균 결과 출력
+    // ───────────────[made by 은혁 & 재경 & 수범]─────────────── //
     system("cls");
     printf("============= 결과 요약 =============\n\n");
     for (int i = 0; i < TRIALS; ++i)
@@ -108,7 +110,7 @@ void showReactionGame()
     printf("\n        평균 반응 속도: \x1b[1;32m%llums\x1b[0m\n", avg);
 
     printf("\n=====================================\n     ");
-
+    // ────────────────────────────────────────────────────────── //
 
     print_grade(avg);
 }

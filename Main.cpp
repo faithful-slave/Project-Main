@@ -4,26 +4,26 @@
 #include "Typing_Game_Screen.h"
 #include "Reaction_Test_Game.h"
 #include <Windows.h>
-
+// ───────────────[made by 수범]─────────────── //
 int main()
 {
     showMainScreen();
     while (1)  // 무한 루프 시작
     {
         system("cls");
-        showMenuScreen();
+        showMenuScreen(); //메뉴 실행
 
         if (menunum == 0)
         {
             system("cls");
-            showReactionGame();
+            showReactionGame(); //반응 속도 테스트 게임 실행
             break;
         }
 
         else if (menunum == 1)
         {
             system("cls");
-            showTypingIntro();
+            showTypingIntro(); //타이핑 인트로 실행
 
             if (returnnum == 1)
             {

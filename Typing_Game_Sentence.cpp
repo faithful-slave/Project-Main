@@ -6,7 +6,8 @@
 #include "Utils.h"
 #include "Typing_Game.h"
 
-void startCountdown() //시작 안내 메시지 함수
+// ───────────────[made by 재경]─────────────── //
+void startCountdown() // 시작 카운트다운 메시지 함수
 {
 #define x 50
 #define y 10
@@ -19,7 +20,7 @@ void startCountdown() //시작 안내 메시지 함수
 	gotoXY(x, y + 6); printf("\\$$$$$$  |");
 	gotoXY(x, y + 7); printf(" \\______/ ");
 	
-	Sleep(1000);//3초 멈춤
+	Sleep(1000);// 3초 멈춤
 	system("cls");
 	
 	gotoXY(x, y + 0); printf(" $$$$$$\\  ");
@@ -31,7 +32,7 @@ void startCountdown() //시작 안내 메시지 함수
 	gotoXY(x, y + 6); printf("$$$$$$$$\\ ");
 	gotoXY(x, y + 7); printf("\\________|");
 	
-	Sleep(1000);//3초 멈춤
+	Sleep(1000);// 3초 멈춤
 	system("cls");
 	
 	gotoXY(x, y + 0); printf(" /$$\\      ");
@@ -43,7 +44,7 @@ void startCountdown() //시작 안내 메시지 함수
 	gotoXY(x, y + 6); printf("$$$$$$\\  ");
 	gotoXY(x, y + 7); printf("\\______| ");
 	
-	Sleep(1000);//3초 멈춤
+	Sleep(1000);// 3초 멈춤
 	system("cls");
 	
 #define x 35
@@ -60,6 +61,7 @@ void startCountdown() //시작 안내 메시지 함수
 	Sleep(100);
 }
 
+// ───────────────[made by 수범]─────────────── //
 char dif[4][10] = { "easy", "normal", "hard" , "crazy" };
 
 char easy_diffculty[easy_sentences_count][500] =
@@ -258,76 +260,76 @@ char crazy_diffculty[crazy_sentences_count][500] =
 	"혼자 여행을 떠나 낯선 도시의 거리를 걷다 보니 익숙하지 않은 풍경과 사람들 속에서 오히려 나 자신에 대해 더 깊이 생각할 수 있었다"
 };
 
-int diff_count = 0; //다른 갯수 카운트 변수
-int minus_count = 0; //마이너스 갯수 카운트 변수
-int T_get_count = 0; // 총 맞은 갯수 카운트 변수
-int get_count = 0; //맞은 갯수 카운트 변수
-int total_sentence_len = 0;
+int diff_count = 0;          // 다른 갯수 카운트 변수
+int minus_count = 0;         // 마이너스 갯수 카운트 변수
+int T_get_count = 0;         // 총 맞은 갯수 카운트 변수
+int get_count = 0;           // 맞은 갯수 카운트 변수
+int total_sentence_len = 0;  // 입력해야 할 문장의 총 길이 카운트 변수
 
-void compare(const char* a, const char* b) //입력한 문장과 출력된 문장과 비교하는 함수
+void compare(const char* a, const char* b) // 입력한 문장과 출력된 문장과 비교하는 함수
 {
-	size_t lenA = strlen(a); //문자열 a의 길이를 lenA에 저장합니다
-	size_t lenB = strlen(b); //문자열 b의 길이를 lenB에 저장합니다
+	size_t lenA = strlen(a); // 문자열 a의 길이를 lenA에 저장합니다
+	size_t lenB = strlen(b); // 문자열 b의 길이를 lenB에 저장합니다
 	size_t i = 0, j = 0; // i와 j를 0으로 초기화 합니다
-	total_sentence_len = lenB;
+	total_sentence_len = lenB; 
 
 	printf("\x1b[38;2;100;255;100m확인: \x1b[0m");
 
-	while (i < lenA && j < lenB) //i < lenA 와 j < lenB 가 만족하지 않을 때까지 반복합니다 
+	while (i < lenA && j < lenB) // i < lenA 와 j < lenB 가 만족하지 않을 때까지 반복합니다 
 	{
 		// 띄어쓰기 차이 처리
-		if (a[i] == ' ' && b[j] != ' ') //만약 a배열의 i번째가 띄어쓰기이면서 b의 배열의 j번째가 띄어쓰기가 아닐 때
+		if (a[i] == ' ' && b[j] != ' ') // 만약 a배열의 i번째가 띄어쓰기이면서 b의 배열의 j번째가 띄어쓰기가 아닐 때
 		{
-			printf("\x1b[38;2;255;80;80m■\x1b[0m"); //빨간색 네모로 출력
-			diff_count++; //다른 수 변수에 1추가
-			i++; //i에 1추가
+			printf("\x1b[38;2;255;80;80m■\x1b[0m"); // 빨간색 네모로 출력
+			diff_count++; // 다른 수 변수에 1추가
+			i++; // i에 1추가
 		}
-		else if (a[i] != ' ' && b[j] == ' ') //위의 것을 해당하지 않고 a배열의 i번째가 띄어쓰기가 아니면서 b의 배열의 j번째가 띄어쓰기 일 때
+		else if (a[i] != ' ' && b[j] == ' ') // 위의 것을 해당하지 않고 a배열의 i번째가 띄어쓰기가 아니면서 b의 배열의 j번째가 띄어쓰기 일 때
 		{
-			printf("\x1b[38;2;255;80;80m■\x1b[0m"); //빨간색 네모로 출력
-			diff_count++; //다른 수 변수에 1추가
-			j++; //j에 1추가
+			printf("\x1b[38;2;255;80;80m■\x1b[0m"); // 빨간색 네모로 출력
+			diff_count++; // 다른 수 변수에 1추가
+			j++; // j에 1추가
 		}
 		else
 		{
-			if ((unsigned char)a[i] & 0x80) //a열 i번째의 최상위 비트가 1일경우
+			if ((unsigned char)a[i] & 0x80) // a열 i번째의 최상위 비트가 1일경우
 			{
-				if (j + 1 >= lenB)  //만약 j+1이 lenB(b배열의 길이)보다 크거나 같을 때 
+				if (j + 1 >= lenB)  // 만약 j+1이 lenB(b배열의 길이)보다 크거나 같을 때 
 				{
 					printf("\x1b[38;2;255;80;80m%.*s\x1b[0m", 2, b + j);
 					// b배열의 j번째부터 시작하는 2바이트를 빨간색으로 출력합니다.
-					diff_count++; //다른 수 변수에 1추가
+					diff_count++; // 다른 수 변수에 1추가
 					break;
 				}
 
-				if (a[i] != b[j] || a[i + 1] != b[j + 1]) //만약 a배열의 i번째가 b배열의 j번째와 같지 않거나 a배열의 i+1번째와 b배열의 j+1번째가 같지않을때
+				if (a[i] != b[j] || a[i + 1] != b[j + 1]) // 만약 a배열의 i번째가 b배열의 j번째와 같지 않거나 a배열의 i+1번째와 b배열의 j+1번째가 같지않을때
 				{
 					printf("\x1b[38;2;255;80;80m%.*s\x1b[0m", 2, b + j);
 					// b배열의 j번째부터 시작하는 2바이트를 빨간색으로 출력합니다.
-					diff_count++; //다른 수 변수에 1추가
+					diff_count++; // 다른 수 변수에 1추가
 				}
 				else
 				{
-					printf("%.*s", 2, b + j); //b배열의 j번째부터 시작하는 2바이트를 빨간색으로 출력합니다.
-					T_get_count++;  //정답갯수 변수에 1을 더함
+					printf("%.*s", 2, b + j); // b배열의 j번째부터 시작하는 2바이트를 빨간색으로 출력합니다.
+					T_get_count++;  // 정답갯수 변수에 1을 더함
 				}
 				i += 2;
 				j += 2;
 			}
-			else //최상위 비트가 1이 아닐 경우
+			else // 최상위 비트가 1이 아닐 경우
 			{
-				if (a[i] != b[j]) //만약 a배열의 i번째가 b배열의 j번째랑 같지 않을 때
+				if (a[i] != b[j]) // 만약 a배열의 i번째가 b배열의 j번째랑 같지 않을 때
 				{
-					printf("\x1b[38;2;255;80;80m%c\x1b[0m", b[j]); //b배열의 j번째를 빨간색으로 출력합니다
-					diff_count++; //다른 수 변수에 1추가
+					printf("\x1b[38;2;255;80;80m%c\x1b[0m", b[j]); // b배열의 j번째를 빨간색으로 출력합니다
+					diff_count++; // 다른 수 변수에 1추가
 				}
-				else //그렇지 않다면
+				else // 그렇지 않다면
 				{
-					printf("%c", b[j]); //b의 j번째를 출력합니다
-					T_get_count++; //정답갯수 변수에 1을 더함
+					printf("%c", b[j]); // b의 j번째를 출력합니다
+					T_get_count++; // 정답갯수 변수에 1을 더함
 				}
-				i++; //i에 1을 더함
-				j++; //j에 1을 더함
+				i++; // i에 1을 더함
+				j++; // j에 1을 더함
 			}
 		}
 	}
@@ -335,25 +337,25 @@ void compare(const char* a, const char* b) //입력한 문장과 출력된 문장과 비교하�
 	// 남은 부분 처리 - b만 남으면 빨간 표시
 	while (j < lenB) // j < lenB 가 만족하지 않을 때까지 반복합니다
 	{
-		if ((unsigned char)b[j] & 0x80 && j + 1 < lenB) //b열 j번째의 최상위 비트가 1이면서 j+1 < lenB를 만족할 때까지 반복합니다 
+		if ((unsigned char)b[j] & 0x80 && j + 1 < lenB) // b열 j번째의 최상위 비트가 1이면서 j+1 < lenB를 만족할 때까지 반복합니다 
 		{
-			printf("\x1b[38;2;255;80;80m%.*s\x1b[0m", 2, b + j); //b배열의 j번째부터 시작하는 2바이트를 빨간색으로 출력합니다.
-			diff_count++; //다른 수 변수에 1추가
+			printf("\x1b[38;2;255;80;80m%.*s\x1b[0m", 2, b + j); // b배열의 j번째부터 시작하는 2바이트를 빨간색으로 출력합니다.
+			diff_count++; // 다른 수 변수에 1추가
 			j += 2;
 		}
 		else //그렇지 않다면
 		{
-			if (b[j] == ' ') //b배열의 j번째가 띄어쓰기 일 때
-				printf("\x1b[38;2;255;80;80m■\x1b[0m"); //빨간색 네모로 출력
-			else //그렇지 않다면
-				printf("\x1b[38;2;255;80;80m%c\x1b[0m", b[j]); //b배열의 j번째를 빨간색으로 출력합니다
-			diff_count++; //다른 수 변수에 1추가
-			j++; //j에 1을 더함
+			if (b[j] == ' ') // b배열의 j번째가 띄어쓰기 일 때
+				printf("\x1b[38;2;255;80;80m■\x1b[0m"); // 빨간색 네모로 출력
+			else // 그렇지 않다면
+				printf("\x1b[38;2;255;80;80m%c\x1b[0m", b[j]); // b배열의 j번째를 빨간색으로 출력합니다
+			diff_count++; // 다른 수 변수에 1추가
+			j++; // j에 1을 더함
 		}
 	}
-	get_count = T_get_count;
+	get_count = T_get_count; 
 	minus_count = diff_count;
-	diff_count = 0;
-	T_get_count = 0;
+	diff_count = 0; 
+	T_get_count = 0; 
 }
 

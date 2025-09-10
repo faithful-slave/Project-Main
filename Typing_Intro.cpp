@@ -15,7 +15,7 @@ int returnnum = 0;
 void showTypingIntro()
 {
     char input;
-    {
+    {    // ───────────────[made by 재경]─────────────── //
         //타자 게임 출력
         colorChange(TEXT_C_CHENG);
         gotoXY(x, y + 1);  printf("/$$$$$$$$ /$$     /$$ /$$$$$$$  /$$$$$$ /$$   /$$  /$$$$$$          /$$$$$$   /$$$$$$  /$$      /$$ /$$$$$$$$\n");
@@ -27,7 +27,7 @@ void showTypingIntro()
         gotoXY(x, y + 7);  printf("   | $$       | $$    | $$       /$$$$$$| $$ \\  $$|  $$$$$$/      |  $$$$$$/| $$  | $$| $$ \\/  | $$| $$$$$$$$\n");
         gotoXY(x, y + 8);  printf("   |__/       |__/    |__/      |______/|__/  \\__/ \\______/        \\______/ |__/  |__/|__/     |__/|________/\n");
         colorChange(TEXT_C_WHITE);
-
+        // ───────────────[made by 수범]─────────────── //
 
         const char* Typing_Menu[] = { "게임 시작하기", "게임 설명", "게임 선택으로 돌아가기" };
         int selected = menu(Typing_Menu, 3, 35, 20, 30, 22);
@@ -42,7 +42,8 @@ void showTypingIntro()
         }
             
         else if (selected == 1)
-        {
+        {    
+            // ───────────────[made by 재경 ]─────────────── //
             #define p 13
             #define y 5
             gotoXY(p, y + 0); printf("==========================================게임설명=============================================\n");
@@ -57,6 +58,8 @@ void showTypingIntro()
             gotoXY(p, y + 9); printf("|                     반복 플레이를 통해 타자 실력을 향상시킬 수 있습니다.                    |\n");
             gotoXY(p, y + 10); printf("|                                                                                             |\n");
             gotoXY(p, y + 11); printf("===============================================================================================\n");
+            
+            // ───────────────[made by 수범]─────────────── //
             const char* Typing_Menu[] = { "게임 시작하기", "게임 선택으로 돌아가기" };
             int selected2 = menu(Typing_Menu, 2, 38, 20, 38, 22);
             if (selected2 == 0)

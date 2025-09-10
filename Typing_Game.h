@@ -11,15 +11,15 @@
 
 void startCountdown();
 void compare(const char* a, const char* b);
-extern char easy_diffculty[easy_sentences_count][500];
+extern char easy_diffculty[easy_sentences_count][500];     // 난이도 하의 문장들을 저장하는 배열 선언
 
-extern char normal_diffculty[normal_sentences_count][500];
+extern char normal_diffculty[normal_sentences_count][500]; // 난이도 중의 문장들을 저장하는 배열 선언
 
-extern char hard_diffculty[hard_sentences_count][500];
+extern char hard_diffculty[hard_sentences_count][500];     // 난이도 상의 문장들을 저장하는 배열 선언
 
-extern char crazy_diffculty[crazy_sentences_count][500];
+extern char crazy_diffculty[crazy_sentences_count][500];   // 난이도 최상의 문장들을 저장하는 배열 선언
 
-extern char dif[4][10];
+extern char dif[4][10];  
 extern int diff_count;
 extern int get_count;
 extern int minus_count;
