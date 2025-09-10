@@ -26,7 +26,7 @@ int main()
                 Rreturnnum = 0;
                 continue;  // continue로 루프 재시작하여 다시 메인메뉴로 돌아감 
             }
-            else
+            if (Rreturnnum == 0)
             {
                 system("cls"); 
                 Rreturnnum = 0;
@@ -47,21 +47,12 @@ int main()
                 continue;  // continue로 루프 재시작하여 다시 메인메뉴로 돌아감
                 
             }
-            if (Treturnnum == 2) // 타이핑 게임 실행
+            if (Treturnnum == 0) // 타이핑 게임 실행
 			{
 				system("cls");
                 Treturnnum = 0;
                 showTypingGame();  // 타이핑 게임 실행
-                break;
 			}
-            else  // 타이핑 게임 실행
-            {
-                system("cls"); 
-                Treturnnum = 0;
-                showTypingGame();  // 타이핑 게임 실행
-                
-                break;
-            }
         }
     }
 

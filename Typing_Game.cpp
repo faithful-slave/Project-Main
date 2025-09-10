@@ -4,7 +4,7 @@
 #include <time.h>
 #include <string.h>
 #include <conio.h>
-
+#include "Menu.h"
 #include "Utils.h"
 #include "Typing_Intro.h"
 #include "Typing_Game_Screen.h"
@@ -33,7 +33,7 @@ void showTypingGame()
 		arr[i] = i;
 	}
 
-	char menu[MENU_COUNT][40] = 
+	char menus[MENU_COUNT][40] = 
 	{
 		"쉬움",
 		"보통",
@@ -55,13 +55,13 @@ void showTypingGame()
 		for (int i = 0; i < MENU_COUNT; i++) 
 		{
 			if (i == selected) // i가 선택된 메뉴인 경우
-				printf("\x1b[38;2;255;220;120m▶ %s\x1b[0m\n", menu[i]); // 화살표를 앞에 붙이고 노란색으로 메뉴 출력
+				printf("\x1b[38;2;255;220;120m▶ %s\x1b[0m\n", menus[i]); // 화살표를 앞에 붙이고 노란색으로 메뉴 출력
 			else if (i == selected && selected == 4)
 			{
-				printf("\x1b[38;2;255;220;120m▶ %s\x1b[0m\n", menu[i]); // 화살표를 앞에 붙이고 노란색으로 메뉴 출력
+				printf("\x1b[38;2;255;220;120m▶ %s\x1b[0m\n", menus[i]); // 화살표를 앞에 붙이고 노란색으로 메뉴 출력
 			}
 			else // 선택되지 않은 메뉴인 경우
-				printf("  \x1b[38;2;80;80;80m%s\x1b[0m\n", menu[i]);  // 화살표를 붙이지 않고 진한 회색으로 메뉴 출력
+				printf("  \x1b[38;2;80;80;80m%s\x1b[0m\n", menus[i]);  // 화살표를 붙이지 않고 진한 회색으로 메뉴 출력
 		}
 
 		ch = _getch(); 
@@ -361,6 +361,23 @@ void showTypingGame()
 	printf("\x1b[38;5;230m당신의 평균 타수는 \x1b[38;5;219m%.2f타\x1b[38;5;230m입니다.\x1b[0m\n", total_avg_wpm);          // 평균 타수 출력
 	printf("\x1b[38;5;230m당신의 총 오타 갯수는 \x1b[38;5;219m%d개\x1b[38;5;230m입니다.\x1b[0m\n", total_minus_count);     // 총 오타갯수 출력
 	// ─────────────────────────────────────────── //
+	const char* Typing_Menu[] = { "게임 선택으로 돌아가기", "게임 끝내기" };
+	int selected1 = menu(Typing_Menu, 2, 35, 15, 37, 17);
+
+	if (selected1 == 0)
+	{
+		printf("게임 선택 화면으로 돌아갑니다\n");
+	}
+	else if (selected1 == 1)
+	{
+		system("cls");
+		printf("\n");
+		gotoXY(40, 5);
+		printf("[ 플레이 해 주셔서 감사합니다 ]");
+		printf("\n\n\n");
+		Sleep(2000);
+		exit(0);
+	}
 	
 	// 해야할 것 총 점수 난이도에 따라 어떻게 계산할지 
 	// 등급도 하고 싶고 별 다섯개도 하고 싶고
