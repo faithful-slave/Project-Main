@@ -11,7 +11,7 @@
 #define x 5
 #define y 8
 #define p 24
-int returnnum = 0;
+int Treturnnum = 0;
 void showTypingIntro()
 {
     char input;
@@ -36,7 +36,7 @@ void showTypingIntro()
         {
             printf("\n");
             gotoXY(47, 5);
-            printf("[ 게임을 시작하는 중 입니다 ]");
+            printf("[ 게임을 시작하는 중입니다 ]");
             Sleep(500);
             printf("\n");
         }
@@ -67,20 +67,20 @@ void showTypingIntro()
                 printf("\n");
                 gotoXY(47, 5);
                 printf("[ 게임을 시작하는 중입니다 ]");
-                returnnum = 2;
+                Treturnnum = 2;
                 Sleep(500);
                 printf("\n");
             }
             else if (selected2 == 1)
 			{
                 printf("게임 선택 화면으로 돌아갑니다\n");
-                returnnum = 1;
+                Treturnnum = 1;
 			}
         }
         else if (selected == 2)
         {
             printf("게임 선택 화면으로 돌아갑니다\n");
-            returnnum = 1;
+            Treturnnum = 1;
         }
 
 

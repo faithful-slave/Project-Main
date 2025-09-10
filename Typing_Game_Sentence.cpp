@@ -9,8 +9,10 @@
 // ───────────────[made by 재경]─────────────── //
 void startCountdown() // 시작 카운트다운 메시지 함수
 {
+
 #define x 50
 #define y 10
+
 	gotoXY(x, y + 0); printf(" $$$$$$\\  ");
 	gotoXY(x, y + 1); printf("$$ ___$$\\ ");
 	gotoXY(x, y + 2); printf("\\_/   $$ |");
@@ -19,9 +21,9 @@ void startCountdown() // 시작 카운트다운 메시지 함수
 	gotoXY(x, y + 5); printf("$$\\   $$ |");
 	gotoXY(x, y + 6); printf("\\$$$$$$  |");
 	gotoXY(x, y + 7); printf(" \\______/ ");
-	
-	Sleep(1000);// 3초 멈춤
-	system("cls");
+	Beep(750, 200); // 3 비프음
+	Sleep(1000);    // 1초 멈춤
+	system("cls");  // 콘솔 삭제
 	
 	gotoXY(x, y + 0); printf(" $$$$$$\\  ");
 	gotoXY(x, y + 1); printf("$$  __$$\\ ");
@@ -31,8 +33,8 @@ void startCountdown() // 시작 카운트다운 메시지 함수
 	gotoXY(x, y + 5); printf("$$ |      ");
 	gotoXY(x, y + 6); printf("$$$$$$$$\\ ");
 	gotoXY(x, y + 7); printf("\\________|");
-	
-	Sleep(1000);// 3초 멈춤
+	Beep(900, 200); // 2 비프음
+	Sleep(1000);    // 1초 멈춤
 	system("cls");
 	
 	gotoXY(x, y + 0); printf(" /$$\\      ");
@@ -43,9 +45,9 @@ void startCountdown() // 시작 카운트다운 메시지 함수
 	gotoXY(x, y + 5); printf("  $$ |   ");
 	gotoXY(x, y + 6); printf("$$$$$$\\  ");
 	gotoXY(x, y + 7); printf("\\______| ");
-	
-	Sleep(1000);// 3초 멈춤
-	system("cls");
+	Beep(1100, 200); // 1 비프음
+	Sleep(1000);     // 1초 멈춤
+	system("cls");   // 콘솔 삭제
 	
 #define x 35
 	gotoXY(x, 10); printf("  /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$$  /$$$$$$$$");
@@ -56,9 +58,9 @@ void startCountdown() // 시작 카운트다운 메시지 함수
 	gotoXY(x, 15); printf(" /$$  \\ $$   | $$  | $$  | $$| $$  \\ $$   | $$   ");
 	gotoXY(x, 16); printf("|  $$$$$$/   | $$  | $$  | $$| $$  | $$   | $$   ");
 	gotoXY(x, 17); printf(" \\______/    |__/  |__/  |__/|__/  |__/   |__/   ");
-	
-	system("cls");
-	Sleep(100);
+	Beep(1300, 500); // START 비프음
+	system("cls");   // 콘솔 삭제
+	Sleep(100);      // 0.1초 멈춤
 }
 
 // ───────────────[made by 수범]─────────────── //

@@ -4,10 +4,13 @@
 #include <windows.h>
 #include <conio.h>
 #include "Reaction_Test_Game.h"
+#include "Utils.h"
+#include "Menu.h"
+#include "Reaction_Intro.h"
 
-#define TRIALS 5
+#define TRIALS 2
 // ───────────────[made by 수범]─────────────── //
-//주석 달고 반응속도 테스트 메뉴 만들기
+// 반응속도 테스트 메뉴 만들기
 void print_grade(ULONGLONG ms) {
     if (ms <= 180) {
         printf("\x1b[38;5;212m등급: 매우빠름 ★★★★★ (대단히 빠름!)\x1b[0m\n");
@@ -51,9 +54,11 @@ void showReactionGame()
         Sleep(randomsleeptime);
 
         // (예비 누름 방지)
-        while (_kbhit()) {
+        while (_kbhit()) 
+        {
             _getch();
-        }Beep(1200, 100);
+        }
+        Beep(1200, 100);
         printf("\n\x1b[1;31m지금!\x1b[0m\n");
 
         ULONGLONG start_time = GetTickCount64();
@@ -84,13 +89,12 @@ void showReactionGame()
     int min = times[0];
     int max = times[0];
 
-    for (int i = 1; i < TRIALS; i++) {
-        if (times[i] < min) {
+    for (int i = 1; i < TRIALS; i++) 
+    {
+        if (times[i] < min) 
             min = times[i];
-        }
-        if (times[i] > max) {
+        if (times[i] > max) 
             max = times[i];
-        }
     }
 
     // 평균 결과 출력
@@ -107,10 +111,26 @@ void showReactionGame()
             printf("   시도 %d: %llums\n", i + 1, times[i]);
     }
     ULONGLONG avg = total_time / TRIALS;
-    printf("\n        평균 반응 속도: \x1b[1;32m%llums\x1b[0m\n", avg);
+    printf("\n     평균 반응 속도: \x1b[1;32m%llums\x1b[0m\n", avg);
 
     printf("\n=====================================\n     ");
-    // ────────────────────────────────────────────────────────── //
-
     print_grade(avg);
+    // ────────────────────────────────────────────────────────── //
+    const char* Reaction_Menu[] = { "게임 선택으로 돌아가기", "게임 끝내기"};
+    int selected = menu(Reaction_Menu, 2, 35, 25, 37, 27);
+
+    if (selected == 0)
+    {
+        printf("게임 선택 화면으로 돌아갑니다\n");
+    }
+    else if (selected == 1)
+    {
+        system("cls");
+        printf("\n");
+        gotoXY(40, 5);
+        printf("[ 플레이 해 주셔서 감사합니다 ]");
+        printf("\n\n\n");
+        Sleep(2000);
+        exit(0);
+    }
 }

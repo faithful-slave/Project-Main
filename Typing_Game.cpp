@@ -5,10 +5,12 @@
 #include <string.h>
 #include <conio.h>
 
+#include "Utils.h"
+#include "Typing_Intro.h"
 #include "Typing_Game_Screen.h"
 #include "Typing_Game.h"  
 
-#define MENU_COUNT 4 // 메뉴 갯수
+#define MENU_COUNT 5 // 메뉴 갯수
 
 // ───────────────[made by 수범]─────────────── //
 // 타이핑 게임 실행 함수
@@ -31,12 +33,13 @@ void showTypingGame()
 		arr[i] = i;
 	}
 
-	char menu[MENU_COUNT][20] = 
+	char menu[MENU_COUNT][40] = 
 	{
 		"쉬움",
 		"보통",
 		"어려움",
-		"매우 어려움"
+		"매우 어려움\n",
+		"게임 선택 화면으로 나가기"
 	};
 
 	int selected = 0; // 난이도 메뉴 선택되었는지 확인을 위한 변수
@@ -53,6 +56,10 @@ void showTypingGame()
 		{
 			if (i == selected) // i가 선택된 메뉴인 경우
 				printf("\x1b[38;2;255;220;120m▶ %s\x1b[0m\n", menu[i]); // 화살표를 앞에 붙이고 노란색으로 메뉴 출력
+			else if (i == selected && selected == 4)
+			{
+				printf("\x1b[38;2;255;220;120m▶ %s\x1b[0m\n", menu[i]); // 화살표를 앞에 붙이고 노란색으로 메뉴 출력
+			}
 			else // 선택되지 않은 메뉴인 경우
 				printf("  \x1b[38;2;80;80;80m%s\x1b[0m\n", menu[i]);  // 화살표를 붙이지 않고 진한 회색으로 메뉴 출력
 		}
@@ -76,7 +83,16 @@ void showTypingGame()
 				break;
 			}
 		}
-
+		else if (selected == 4 && ch == 13)
+		{
+			system("cls");
+			printf("\n");
+			gotoXY(47, 5);
+			printf("[ 게임을 중지하고 게임 선택 화면으로 돌아갑니다 ]\n");
+			Sleep(700);
+			Treturnnum = 1;
+			break;
+		}
 		else if (ch == 13) // ch에 입력 받은 키가 Enter키 이면
 		{ 
 			difnum = selected;  // 선택된 메뉴의 인덱스를 difnum에 저장
@@ -94,7 +110,7 @@ void showTypingGame()
 	startCountdown(); 
 
 
-	for (int i = 0; i < 10; i++)  // 10개의 문장 출력
+	for (int i = 0; i < 2; i++)  // 10개의 문장 출력
 	{
 		int random_num = rand() % size; // 0 ~ 45의 랜덤 숫자 출력
 
