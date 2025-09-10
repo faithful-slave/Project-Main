@@ -66,7 +66,7 @@ void DoProgress(const char* label, int step, int total, int x, int y)
     printf(" %3d%% 완료됨", percent);
 }
 
-void Trycount(int textX, int textY)
+void Trycount(int textX, int textY) //시도 횟수 정하는 함수 완성하기
 {
     int ch;
     while (1)
