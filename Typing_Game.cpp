@@ -122,8 +122,7 @@ void showTypingGame()
 				printf("[ %d ] ", linenum); // 줄번호 출력
 				printf("\x1b[1;36m%s\n\x1b[0m", easy_diffculty[non_overlap]); // 입력해야 하는 랜덤한 문장 출력
 				printf("입력: "); // :을 붙어서 출력
-			}
-			else // 줄번호가 10의 배수이면
+			}			else // 줄번호가 10의 배수이면
 			{
 				printf("[ %d ] ", linenum); // 줄번호 출력
 				printf("\x1b[1;36m%s\n\x1b[0m", easy_diffculty[non_overlap]); // 입력해야 하는 랜덤한 문장 출력
