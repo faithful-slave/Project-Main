@@ -68,23 +68,5 @@ void DoProgress(const char* label, int step, int total, int x, int y)
 
 void Trycount(int textX, int textY) //시도 횟수 정하는 함수 완성하기
 {
-    int ch;
-    while (1)
-    {
-        gotoXY(textX, textY);
-        printf("좌우 방향키로 메뉴 선택 후 Enter 키를 누르세요.\n\n");
-        if (ch == 224)
-        {
-            ch = _getch();
-            if (ch == 72) // 上 화살표 키
-            {
-
-            }
-            if (ch == 80) // 下 화살표 키
-            {
-
-            }
-        }
-    }
 
 }

@@ -15,7 +15,22 @@ int main()
     while (1)  // 무한 루프 시작
     {
         system("cls");
-        showMenuScreen(); // 메뉴 실행
+        if (Rreturnnum != 3 && Treturnnum != 3)
+            showMenuScreen(); // 메뉴 실행
+        else if (Rreturnnum == 3)
+		{
+			system("cls");
+            Rreturnnum = 0;
+			showReactionGame();
+			
+		}
+		else if (Treturnnum == 3)
+		{
+			system("cls");
+            Treturnnum = 0;
+			showTypingGame();
+			
+		}
 
         if (menunum == 0)  // 반응속도 테스트 게임 선택
         {
@@ -59,14 +74,12 @@ int main()
         if (Rreturnnum == 3)
         {
             system("cls");
-            Rreturnnum = 0;
             showReactionIntro();  // 반응 게임 실행
         }
 
         if (Treturnnum == 3)
         {
             system("cls");
-            Treturnnum = 0;
             showTypingIntro();  // 타이핑 게임 실행
         }
         

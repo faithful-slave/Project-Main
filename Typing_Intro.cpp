@@ -67,7 +67,6 @@ void showTypingIntro()
                 printf("\n");
                 gotoXY(47, 5);
                 printf("[ 게임을 시작하는 중입니다 ]");
-                Treturnnum = 2;
                 Sleep(500);
                 printf("\n");
             }

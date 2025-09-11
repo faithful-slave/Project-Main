@@ -86,7 +86,7 @@ void showTypingGame()
 		{
 			system("cls");
 			printf("\n");
-			gotoXY(47, 5);
+			gotoXY(35, 10);
 			printf("[ 게임을 중지하고 게임 선택 화면으로 돌아갑니다 ]\n");
 			Sleep(700);
 			Treturnnum = 1;
