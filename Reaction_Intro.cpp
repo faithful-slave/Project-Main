@@ -33,9 +33,10 @@ void showReactionIntro()
     gotoXY(x, y + 15); printf("|  $$$$$$/| $$  | $$| $$ \\/  | $$| $$$$$$$$");
     gotoXY(x, y + 16); printf(" \\______/ |__/  |__/|__/     |__/|________/");
 
-
-    const char* Reaction_Menu[] = { "게임 시작하기", "게임 선택으로 돌아가기" };
-    int selected = menu(Reaction_Menu, 2, 35, 25, 37, 27);
+    Trycount(32, 25, 44);
+    const char* Reaction_Menu[] = { "게임 시작하기", "게임 선택으로 돌아가기", "게임 시도 횟수 다시 정하기"};
+    int selected = menu(Reaction_Menu, 3, 37, 25, 20, 27);
+    
 
     if (selected == 0)
     {
@@ -51,6 +52,12 @@ void showReactionIntro()
         gotoXY(47, 5);
         printf("게임 선택 화면으로 돌아갑니다\n");
         Rreturnnum = 1;
+    }
+    else if (selected == 2)
+    {
+        printf("\n");
+        gotoXY(47, 5);
+        Rreturnnum = 4;
     }
 
 }

@@ -48,8 +48,7 @@ void showTypingGame()
 	while (1) 
 	{
 		system("cls");  // 콘솔 화면 지우기
-		printf("난이도를 선택해주세요\n");
-
+		printf("난이도를 선택해주세요 [ 게임 진행 횟수 : %d ]\n", trynum);
 		// 메뉴 출력
 		for (int i = 0; i < MENU_COUNT; i++) 
 		{
@@ -109,7 +108,7 @@ void showTypingGame()
 	startCountdown(); 
 
 
-	for (int i = 0; i < 2; i++)  // 10개의 문장 출력
+	for (int i = 0; i < trynum; i++)  // 10개의 문장 출력
 	{
 		int random_num = rand() % size; // 0 ~ 45의 랜덤 숫자 출력
 
@@ -349,9 +348,9 @@ void showTypingGame()
 		}
 	}
 	double total_avg_time = 0;          // 평균 타이핑 속도 변수
-	total_avg_time = total_time / 10;   // 평균 타이핑 속도 계산
+	total_avg_time = total_time / trynum;   // 평균 타이핑 속도 계산
 	double total_avg_wpm = 0;           // 평균 타수 변수
-	total_avg_wpm = total_wpm / 10;     // 평균 타수 계산
+	total_avg_wpm = total_wpm / trynum;     // 평균 타수 계산
 	
 	// ───────────────[made by 은혁]─────────────── //
 	printf("\x1b[38;5;230m당신의 난이도는 \x1b[38;5;219m%s\x1b[38;5;230m입니다.\x1b[0m\n", dif[difnum]);                   // 난이도 출력

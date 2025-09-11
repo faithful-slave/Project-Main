@@ -8,7 +8,6 @@
 #include "Menu.h"
 #include "Reaction_Intro.h"
 
-#define TRIALS 2
 // ───────────────[made by 수범]─────────────── //
 // 반응속도 테스트 메뉴 만들기
 void print_grade(ULONGLONG ms) {
@@ -31,23 +30,22 @@ void print_grade(ULONGLONG ms) {
         printf("\x1b[38;5;246m등급: 매우느림 ☆☆☆☆☆ (연습 필요!)\x1b[0m\n");
     }
 }
-
+int num = 0;
 void showReactionGame()
 {
-
     srand((unsigned int)time(NULL));
     ULONGLONG total_time = 0;
-    ULONGLONG times[TRIALS];
+    ULONGLONG* times = new ULONGLONG[trynum];
 
-    printf("< 반응 속도 테스트 - 총 %d회 >\n\n", TRIALS);
+    printf("< 반응 속도 테스트 - 총 %d 회 >\n\n", trynum);
     Sleep(1000);
     printf("'\x1b[1;31m지금!\x1b[0m'이라는 글자가 나타나면 아무 키나 누르세요!\n");
     Sleep(3000);
 
-    for (int i = 0; i < TRIALS; ++i)
+    for (int i = 0; i < trynum; ++i)
     {
         system("cls");
-        printf("[시도 %d/%d]\n", i + 1, TRIALS);
+        printf("[시도 %d/%d]\n", i + 1, trynum);
 
         int randomsleeptime = 1000 + rand() % 9000;
         printf("준비하세요...\n");
@@ -71,7 +69,7 @@ void showReactionGame()
                 ULONGLONG end_time = GetTickCount64();
                 system("cls");
 
-                printf("[시도 %d/%d]\n", i + 1, TRIALS);
+                printf("[시도 %d/%d]\n", i + 1, trynum);
                 printf("\n");
                 ULONGLONG elapsed_ms = end_time - start_time;
                 times[i] = elapsed_ms;
@@ -89,7 +87,7 @@ void showReactionGame()
     int min = times[0];
     int max = times[0];
 
-    for (int i = 1; i < TRIALS; i++) 
+    for (int i = 1; i < trynum; i++)
     {
         if (times[i] < min) 
             min = times[i];
@@ -101,7 +99,7 @@ void showReactionGame()
     // ───────────────[made by 은혁 & 재경 & 수범]─────────────── //
     system("cls");
     printf("============= 결과 요약 =============\n\n");
-    for (int i = 0; i < TRIALS; ++i)
+    for (int i = 0; i < trynum; ++i)
     {
         if (min == times[i])
             printf("   시도 %d: \x1b[38;2;118;255;118m%llums (가장 빠른 속도)\x1b[0m\n", i + 1, times[i]);
@@ -110,7 +108,7 @@ void showReactionGame()
         else
             printf("   시도 %d: %llums\n", i + 1, times[i]);
     }
-    ULONGLONG avg = total_time / TRIALS;
+    ULONGLONG avg = total_time / trynum;
     printf("\n    평균 반응 속도: \x1b[1;32m%llums\x1b[0m\n", avg);
 
     printf("\n=====================================\n     ");
@@ -149,4 +147,5 @@ void showReactionGame()
         Sleep(2000);
         exit(0);
     }
+    delete[] times;
 }

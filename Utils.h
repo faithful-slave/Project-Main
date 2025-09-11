@@ -9,6 +9,8 @@ void colorEnd();
 
 void DoProgress(const char* label, int step, int total, int x, int y);
 
+void Trycount(int textX, int textY, int numX);
+extern int trynum;
 #define ANSI_POS_OFFSET_X 1
 #define ANSI_POS_OFFSET_Y 1
 

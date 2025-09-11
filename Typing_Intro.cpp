@@ -28,10 +28,10 @@ void showTypingIntro()
         gotoXY(x, y + 8);  printf("   |__/       |__/    |__/      |______/|__/  \\__/ \\______/        \\______/ |__/  |__/|__/     |__/|________/\n");
         colorChange(TEXT_C_WHITE);
         // ───────────────[made by 수범]─────────────── //
-
-        const char* Typing_Menu[] = { "게임 시작하기", "게임 설명", "게임 선택으로 돌아가기" };
-        int selected = menu(Typing_Menu, 3, 35, 20, 30, 22);
-        //gotoXY(40, 20);//gotoXY(50, 22);
+        Trycount(36, 20, 45);
+        const char* Typing_Menu[] = { "게임 시작하기", "게임 설명", "게임 선택으로 돌아가기" , "게임 횟수 다시 정하기"};
+        int selected = menu(Typing_Menu, 4, 36, 20, 18, 22);
+        
         if (selected == 0)
         {
             printf("\n");
@@ -81,7 +81,12 @@ void showTypingIntro()
             printf("게임 선택 화면으로 돌아갑니다\n");
             Treturnnum = 1;
         }
-
+        else if (selected == 3)
+        {
+            printf("\n");
+            gotoXY(47, 5);
+            Treturnnum = 4;
+        }
 
     }
 }

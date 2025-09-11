@@ -66,7 +66,57 @@ void DoProgress(const char* label, int step, int total, int x, int y)
     printf(" %3d%% 완료됨", percent);
 }
 
-void Trycount(int textX, int textY) //시도 횟수 정하는 함수 완성하기
-{
+int trynum = 10;
+void Trycount(int textX, int textY, int numX) {
+    int ch;
+    
 
+    while (1) {
+        // 화면 클리어
+        gotoXY(textX, textY);
+        printf("상하 방향키로 시도 횟수를 설정 후 Enter 키를 누르세요.\n\n");
+        gotoXY(numX, textY + 2);
+        printf("\r\33[2K"); // 줄 청소
+        gotoXY(numX, textY + 3);
+        printf("\r\33[2K"); // 줄 청소
+
+        gotoXY(numX, textY + 2);
+        printf("현재 게임 시도 횟수: [ %d ]\n", trynum);
+
+        ch = _getch();  // 키 입력 받기
+
+        if (ch == 224)
+        {  // 특수 키(방향키 등) 처리
+            ch = _getch();  // 실제 방향키 코드 받기
+
+            if (ch == 80)
+            {         // ↓ 아레쪽 화살표
+                if (trynum <= 1)        // 음수 방지
+                {
+                    gotoXY(numX, textY + 2);
+                    printf("현재 게임 시도 횟수: [ %d ]\n", trynum);
+                    gotoXY(numX, textY + 3);
+                    printf(" 1 이상으로 선택해주세요 ");
+
+                    Sleep(300);
+                }
+                else
+                    trynum--;
+            }
+            else if (ch == 72)    // ↑ 위쪽 화살표
+                trynum++;
+        }
+        else if (ch == 13)
+        {  // Enter 키
+            gotoXY(numX, textY - 2);
+            printf("현재 게임 시도 횟수: [ %d ]\n", trynum);
+            gotoXY(textX, textY);
+            printf("\r\33[2K"); // 줄 청소
+            gotoXY(numX, textY + 2);
+            printf("\r\33[2K"); // 줄 청소
+            gotoXY(numX, textY + 3);
+            printf("\r\33[2K"); // 줄 청소
+            return;
+        }
+    }
 }

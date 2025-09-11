@@ -9,13 +9,11 @@
 
 int main()
 {
-    //showReactionIntro();
-    
     showMainScreen();
     while (1)  // 무한 루프 시작
     {
         system("cls");
-        if (Rreturnnum != 3 && Treturnnum != 3)
+        if (Rreturnnum != 3 && Treturnnum != 3 && Rreturnnum != 4 && Treturnnum != 4)
             showMenuScreen(); // 메뉴 실행
         else if (Rreturnnum == 3)
 		{
@@ -31,11 +29,27 @@ int main()
 			showTypingGame();
 			
 		}
-
-        if (menunum == 0)  // 반응속도 테스트 게임 선택
+        if (Rreturnnum == 4)
         {
             system("cls");
-            showReactionIntro(); // 반응 속도 테스트 게임 실행
+			Rreturnnum = 0;
+            menunum = 5;
+            showReactionIntro();  // 반응 게임 실행
+        }
+        if (Treturnnum == 4)
+        {
+            system("cls");
+            Treturnnum = 0;
+            menunum = 6;
+            showTypingIntro();  // 반응 게임 실행
+        }
+
+
+        if (menunum == 0 || menunum == 5)  // 반응속도 테스트 게임 선택
+        {
+            system("cls");
+            if (menunum == 0)
+                showReactionIntro(); // 반응 속도 테스트 게임 실행
             if (Rreturnnum == 1)
             {
                 system("cls"); 
@@ -51,10 +65,11 @@ int main()
             
         }
 
-        else if (menunum == 1) // 타자 게임 선택
+        else if (menunum == 1 || menunum == 6) // 타자 게임 선택
         {
             system("cls");
-            showTypingIntro(); // 타이핑 인트로 실행
+            if (menunum == 1)
+                showTypingIntro(); // 타이핑 인트로 실행
             
            if (Treturnnum == 1) //메뉴로
             {
